@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Produto, produtos } from '../produtos';
+import { Product, products } from 'src/products';
 
 @Component({
   selector: 'app-produtos-detalhes',
@@ -8,12 +8,12 @@ import { Produto, produtos } from '../produtos';
   styleUrls: ['./produtos-detalhes.component.css'],
 })
 export class ProdutosDetalhesComponent implements OnInit {
-  produto: Produto | undefined;
+  produto: Product | undefined;
   constructor(private router: ActivatedRoute) {}
 
   ngOnInit(): void {
     const routeParams = this.router.snapshot.paramMap;
     const produtoId = Number(routeParams.get('produtoId'));
-    this.produto = produtos.find((produto) => produto.id == produtoId);
+    this.produto = products.find((produto) => produto.id == produtoId);
   }
 }

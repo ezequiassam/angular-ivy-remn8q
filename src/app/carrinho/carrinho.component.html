@@ -1,0 +1,10 @@
+<h2>Carrinho</h2>
+<div *ngFor="let car of carrinho">
+  <p>
+    {{ car.produto.name }} {{ car.produto.price }} <button>+</button
+    ><button>-</button>
+  </p>
+</div>
+<div>
+  <h3>Total da compra: R${{ getTotal() }}</h3>
+</div>
